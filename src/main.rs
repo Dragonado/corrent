@@ -1,3 +1,5 @@
+#[allow(unused)]
+
 mod bencode;
 mod bdecode;
 use bdecode::{bdecode_element};

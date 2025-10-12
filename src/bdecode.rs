@@ -4,9 +4,10 @@ use crate::bencode::BencodeValue;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum BdecodingError {
-    NullRoot(String),
-    NonSingularRootItem(String),
-    InvalidType(String),
+    // TODO: Figure out why we dont use the commented out errors.
+    // NullRoot(String),
+    // NonSingularRootItem(String),
+    // InvalidType(String),
     MissingTerminator(String),
     IntegerError(String),
     ByteStringError(String),
@@ -165,6 +166,7 @@ fn bdecode_dicitionary(e: &[u8]) -> Result<BencodeValue, BdecodingError> {
         let left_index_val = left_index_key + key_len;
         let right_index_val = left_index_val + get_first_element_len(&e[left_index_val..])?;
 
+        // Matching with string because we know that bdecode_bytestr allows return a bytestring array instead of list or i64 or dict.
         let BencodeValue::ByteString(key) = bdecode_bytestr(&e[left_index_key..left_index_val])? else {unreachable!()};
         let val = bdecode_element(&e[left_index_val..right_index_val])?;
 
