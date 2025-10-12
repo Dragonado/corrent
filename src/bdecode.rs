@@ -16,7 +16,7 @@ pub enum BdecodingError {
 
 fn parse_i64(e: &[u8]) -> Result<i64, BdecodingError> {
     match String::from_utf8(e.to_vec()) {
-        Ok(s) => match(s.parse::<i64>()) {
+        Ok(s) => match s.parse::<i64>() {
             Ok(num) =>{
                 // Fail on cases like 042.
                 if num > 0 && s.chars().nth(0).unwrap() == '0'  {
@@ -44,8 +44,6 @@ fn parse_i64(e: &[u8]) -> Result<i64, BdecodingError> {
 fn get_corresponding_terminator(e: &[u8]) -> Result<usize, BdecodingError> {
     // Assert here because we only call this function if the starting character actually has a l or a d.
     assert!(e[0] == b'l' || e[0] == b'd');
-
-    let mut opening_cnt = 0i64;
 
     let mut index = 1; // first index is either l or d.
     while index < e.len() {
