@@ -1,6 +1,6 @@
 use std::collections::BTreeMap;
 
-use crate::bencode::{BencodeValue, bencode_element};
+use crate::bencode::BencodeValue;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum BdecodingError {
