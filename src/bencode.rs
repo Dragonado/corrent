@@ -1,12 +1,41 @@
 use std::collections::BTreeMap;
+use std::fmt;
+use std::fmt::Debug;
 
 /// Public enum that callers will use
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Clone, PartialEq, Eq)]
 pub enum BencodeValue {
     Integer(i64),
     ByteString(Vec<u8>),
     List(Vec<BencodeValue>),
     Dictionary(BTreeMap<Vec<u8>, BencodeValue>),
+}
+
+impl Debug for BencodeValue {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            BencodeValue::Integer(i) => write!(f, "Integer({})", i),
+            BencodeValue::ByteString(bytes) => {
+                // Convert bytes to UTF-8 lossy (so invalid UTF-8 doesn't panic)
+                let s = String::from_utf8_lossy(bytes);
+                write!(f, "ByteString(\"{}\")", s)
+            }
+            BencodeValue::List(list) => {
+                write!(f, "List(")?;
+                f.debug_list().entries(list).finish()?;
+                write!(f, ")")
+            }
+            BencodeValue::Dictionary(map) => {
+                write!(f, "Dictionary(")?;
+                f.debug_map()
+                    .entries(map.iter().map(|(k, v)| {
+                        (String::from_utf8_lossy(k), v)
+                    }))
+                    .finish()?;
+                write!(f, ")")
+            }
+        }
+    }
 }
 
 /// Public entry-point encoder
