@@ -2,13 +2,21 @@
 
 mod bencode;
 mod bdecode;
-use bdecode::{bdecode_element};
+use std::fs;
+use std::io;
 
-fn main() {
-    let sample_file = "d8:announce14:http://tracker4:infod6:lengthi12345e4:name10:myfile.txtee".to_string();
+fn main() -> io::Result<()> {
+    // Path to your .torrent file
+    let path = "sample.torrent";
 
-    match bdecode_element(&sample_file.into_bytes()){
-        Ok(v) => println!("{:?}", v),
-        Err(e) => println!("Error: {:?}", e),
+    // Read the entire file as bytes
+    let bytes = fs::read(path)?;
+
+    // Now decode it
+    match bdecode::bdecode_element(&bytes) {
+        Ok(v) => println!("Decoded value = {:?}", v),
+        Err(e) => println!("Error while decoding: {:?}", e),
     }
-}              
+
+    Ok(())
+}

@@ -1,3 +1,5 @@
+#[allow(unused)]
+
 use std::collections::BTreeMap;
 
 use crate::bencode::BencodeValue;
@@ -133,8 +135,6 @@ fn bdecode_list(e: &[u8]) -> Result<BencodeValue, BdecodingError> {
     let e = &e[1..e.len()-1]; // trim the first and last character.
     let mut left_index = 0;
     let mut ans = Vec::<BencodeValue>::new();
-
-    println!("e = {}", String::from_utf8_lossy(&e));
 
     while left_index < e.len() {
         let right_index = left_index + get_first_element_len(&e[left_index..])?;
