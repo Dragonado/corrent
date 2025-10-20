@@ -2,3 +2,7 @@
 name = "corrent"
 version = "0.1.0"
 edition = "2024"
+
+[dependencies]
+hex-literal = "1.0.0"
+sha1 = "0.10.6"

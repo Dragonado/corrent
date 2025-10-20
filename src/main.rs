@@ -1,22 +1,23 @@
-#[allow(unused)]
+use std::env;
+use std::fs;
 
 mod bencode;
 mod bdecode;
-use std::fs;
-use std::io;
 
-fn main() -> io::Result<()> {
-    // Path to your .torrent file
-    let path = "sample.torrent";
+fn main() {
+    // Get command-line arguments
+    let args: Vec<String> = env::args().collect();
 
-    // Read the entire file as bytes
-    let bytes = fs::read(path)?;
-
-    // Now decode it
-    match bdecode::bdecode_element(&bytes) {
-        Ok(v) => println!("Decoded value = {:?}", v),
-        Err(e) => println!("Error while decoding: {:?}", e),
+    if args.len() < 2 {
+        eprintln!("Usage: {} <path to .torrent file>", args[0]);
+        std::process::exit(1);
     }
 
-    Ok(())
+    let path = &args[1];
+
+    // Read file
+    let bytes = fs::read(path).expect("Failed to read file");
+
+    let v = bdecode::bdecode_element(&bytes).expect("Failed to decode");
+    println!("{:#?}", v);
 }

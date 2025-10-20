@@ -1,2 +1,77 @@
-Decoded value = Dictionary({"announce": ByteString("https://academictorrents.com/announce.php"), "announce-list": List([List([ByteString("https://academictorrents.com/announce.php")]), List([ByteString("https://ipv6.academictorrents.com/announce.php")]), List([ByteString("udp://tracker.opentrackr.org:1337/announce")]), List([ByteString("udp://tracker.publicbt.com:80/announce")]), List([ByteString("udp://tracker.openbittorrent.com:80/announce")])]), "created by": ByteString("BitComet/1.55"), "creation date": Integer(1549521107), "encoding": ByteString("UTF-8"), "info": Dictionary({"ed2k": ByteString("��u�4�g��A�
-#G�'"), "filehash": ByteString("Fԕe+.�v��4����v4�P"), "length": Integer(18), "name": ByteString("Victor Yerena.txt"), "name.utf-8": ByteString("Victor Yerena.txt"), "piece length": Integer(32768), "pieces": ByteString("Fԕe+.�v��4����v4�P")}), "nodes": List([List([ByteString("81.7.17.119"), Integer(47501)]), List([ByteString("178.62.250.135"), Integer(51413)]), List([ByteString("5.18.243.224"), Integer(13318)]), List([ByteString("82.176.218.19"), Integer(50321)]), List([ByteString("46.246.61.100"), Integer(65126)]), List([ByteString("31.148.2.1"), Integer(6882)]), List([ByteString("198.23.164.133"), Integer(51413)]), List([ByteString("46.166.143.71"), Integer(57806)]), List([ByteString("193.110.63.190"), Integer(57693)]), List([ByteString("24.175.194.223"), Integer(40458)])]), "url-list": List([ByteString("")])})
+Dictionary({
+    "announce": ByteString("https://academictorrents.com/announce.php"),
+    "announce-list": List([
+        List([
+            ByteString("https://academictorrents.com/announce.php"),
+        ]),
+        List([
+            ByteString("https://ipv6.academictorrents.com/announce.php"),
+        ]),
+        List([
+            ByteString("udp://tracker.opentrackr.org:1337/announce"),
+        ]),
+        List([
+            ByteString("udp://tracker.publicbt.com:80/announce"),
+        ]),
+        List([
+            ByteString("udp://tracker.openbittorrent.com:80/announce"),
+        ]),
+    ]),
+    "created by": ByteString("BitComet/1.55"),
+    "creation date": Integer(1549521107),
+    "encoding": ByteString("UTF-8"),
+    "info": Dictionary({
+        "ed2k": ByteString("��u�4�g��A�#G�'"),
+        "filehash": ByteString("Fԕe+.�v��4����v4�P"),
+        "length": Integer(18),
+        "name": ByteString("Victor Yerena.txt"),
+        "name.utf-8": ByteString("Victor Yerena.txt"),
+        "piece length": Integer(32768),
+        "pieces": ByteString("Fԕe+.�v��4����v4�P"),
+    }),
+    "nodes": List([
+        List([
+            ByteString("81.7.17.119"),
+            Integer(47501),
+        ]),
+        List([
+            ByteString("178.62.250.135"),
+            Integer(51413),
+        ]),
+        List([
+            ByteString("5.18.243.224"),
+            Integer(13318),
+        ]),
+        List([
+            ByteString("82.176.218.19"),
+            Integer(50321),
+        ]),
+        List([
+            ByteString("46.246.61.100"),
+            Integer(65126),
+        ]),
+        List([
+            ByteString("31.148.2.1"),
+            Integer(6882),
+        ]),
+        List([
+            ByteString("198.23.164.133"),
+            Integer(51413),
+        ]),
+        List([
+            ByteString("46.166.143.71"),
+            Integer(57806),
+        ]),
+        List([
+            ByteString("193.110.63.190"),
+            Integer(57693),
+        ]),
+        List([
+            ByteString("24.175.194.223"),
+            Integer(40458),
+        ]),
+    ]),
+    "url-list": List([
+        ByteString(""),
+    ]),
+})

@@ -5,3 +5,4 @@ Reading:
 - https://www.bittorrent.com
 - https://en.wikipedia.org/wiki/BitTorrent
 - https://www.youtube.com/watch?v=vpSkBV5vydg - to understand UTF-8. Needed to understand why we do bencoding.
+- https://wiki.theory.org/BitTorrentSpecification#Identification - formal guide
