@@ -300,8 +300,28 @@ mod tests {
             BencodeValue::Dictionary(dict)
         );
     }
-
     #[test]
+    fn test_non_utf8_length_prefix_fails() {
+        use super::*;
+
+        let encoded = b"\xFF:abc";
+        let res = bdecode_element(encoded);
+
+        // Current buggy behavior: we expect an error about UTF-8 / Integer parsing
+        assert!(res.is_err());
+
+        match res {
+            Err(BdecodingError::IntegerError(msg)) => {
+                // message may vary; check it mentions UTF-8 or integer parsing
+                assert!(
+                    msg.contains("UTF-8") || msg.contains("integer"),
+                    "unexpected error message: {}",
+                    msg
+                );
+            }
+            other => panic!("expected IntegerError but got: {:?}", other),
+        }
+    }  
     fn test_invalid_dictionaries() {
         assert!(bdecode_element(b"di42e4:spame").is_err()); // non-string key
         assert!(bdecode_element(b"d4:spam4:eggs").is_err()); // missing e
