@@ -93,19 +93,16 @@ fn main() ->  Result<(), Box<dyn std::error::Error>> {
     // Read file
     let bytes = fs::read(path).expect("Failed to read file");
 
-    let BencodeValue::Dictionary(torrent) = bdecode_element(&bytes).expect("Failed to decode") 
-    else {
+    let BencodeValue::Dictionary(torrent) = bdecode_element(&bytes).expect("Failed to decode") else {
         eprintln!("ERROR: Torrent file is not a dictionary.");
         std::process::exit(1);
     };
 
     let get_tracker_request_url = get_tracker_request_url(&torrent);
     println!("get_tracker_request_url = {get_tracker_request_url:#?}");    
-    let response = reqwest::blocking::get(get_tracker_request_url)?.text()?;
-    println!("response = {response}");    
-    //let decoded_response = bdecode_element(&response.into_bytes()); 
-    // Use the bencoding crate for validation. Remove once you figuer out bug in self decoding.
-    let decoded_response = bencoding::decode(&response.into_bytes());
+    let response = reqwest::blocking::get(get_tracker_request_url)?.bytes()?;
+    println!("response = {response:#?}");    
+    let decoded_response = bdecode_element(&response); 
     println!("decoded_response = {decoded_response:#?}");    
 
     Ok(())
