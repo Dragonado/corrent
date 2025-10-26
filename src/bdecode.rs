@@ -1,5 +1,6 @@
 #[allow(unused)]
 
+use std::fmt;
 use std::collections::BTreeMap;
 
 use crate::bencode::BencodeValue;
@@ -16,6 +17,14 @@ pub enum BdecodingError {
     ListError(String),
     DictionaryError(String)
 }
+
+impl fmt::Display for BdecodingError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
+}
+
+impl std::error::Error for BdecodingError {}
 
 fn parse_i64(e: &[u8]) -> Result<i64, BdecodingError> {
     match String::from_utf8(e.to_vec()) {

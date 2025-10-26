@@ -1,0 +1,140 @@
+decoded_response = Dictionary({
+    "interval": Integer(1800),
+    "peers": List([
+        Dictionary({
+            "ip": ByteString("146.70.229.21"),
+            "peer id": ByteString("-qB5100-HaO.HnkSrHfu"),
+            "port": Integer(36807),
+        }),
+        Dictionary({
+            "ip": ByteString("146.70.229.8"),
+            "peer id": ByteString("-qB5100-vX2gd*Dnhkb9"),
+            "port": Integer(45266),
+        }),
+        Dictionary({
+            "ip": ByteString("149.22.87.3"),
+            "peer id": ByteString("-qB5120-NTqdPgCb~ifj"),
+            "port": Integer(54540),
+        }),
+        Dictionary({
+            "ip": ByteString("2.103.72.225"),
+            "peer id": ByteString("-qB4450--IoCTjL1xS0m"),
+            "port": Integer(6363),
+        }),
+        Dictionary({
+            "ip": ByteString("176.213.55.167"),
+            "peer id": ByteString("-qB4450-JIhvj.pJ3Cy0"),
+            "port": Integer(6363),
+        }),
+        Dictionary({
+            "ip": ByteString("37.235.194.149"),
+            "peer id": ByteString("-qB5110-NbTqv*GmdRrC"),
+            "port": Integer(52789),
+        }),
+        Dictionary({
+            "ip": ByteString("188.119.38.142"),
+            "peer id": ByteString("-TR4060-zcugt7fhuf73"),
+            "port": Integer(51413),
+        }),
+        Dictionary({
+            "ip": ByteString("45.83.127.11"),
+            "peer id": ByteString("-qB5100-X(nKKf-2VcNy"),
+            "port": Integer(58488),
+        }),
+        Dictionary({
+            "ip": ByteString("185.203.56.65"),
+            "peer id": ByteString("-lt0D80-���;����n��"),
+            "port": Integer(62526),
+        }),
+        Dictionary({
+            "ip": ByteString("155.2.216.8"),
+            "peer id": ByteString("-qB5120-L9ZVHwSLKaP_"),
+            "port": Integer(45768),
+        }),
+        Dictionary({
+            "ip": ByteString("136.47.140.219"),
+            "peer id": ByteString("-qB5040-y6MWdiDhmYSx"),
+            "port": Integer(8999),
+        }),
+        Dictionary({
+            "ip": ByteString("84.255.192.67"),
+            "peer id": ByteString("-qB4450-ZMG4.k-Ig)tF"),
+            "port": Integer(6363),
+        }),
+        Dictionary({
+            "ip": ByteString("173.32.2.136"),
+            "peer id": ByteString("-TR4060-qbsty6fth18c"),
+            "port": Integer(51413),
+        }),
+        Dictionary({
+            "ip": ByteString("86.107.224.234"),
+            "peer id": ByteString("-UW1500-vYBLy0q(WNpl"),
+            "port": Integer(6881),
+        }),
+        Dictionary({
+            "ip": ByteString("118.200.228.42"),
+            "peer id": ByteString("-qB4400-J_fRhx(s~JqY"),
+            "port": Integer(8181),
+        }),
+        Dictionary({
+            "ip": ByteString("74.137.86.11"),
+            "peer id": ByteString("-qB4170-)VJ-OHdjy1wy"),
+            "port": Integer(8999),
+        }),
+        Dictionary({
+            "ip": ByteString("176.188.31.15"),
+            "peer id": ByteString("-qB4400-A9T1lW2ifu1P"),
+            "port": Integer(6363),
+        }),
+        Dictionary({
+            "ip": ByteString("94.248.132.40"),
+            "peer id": ByteString("-qB4400-Q1isNAeXEtT_"),
+            "port": Integer(6363),
+        }),
+        Dictionary({
+            "ip": ByteString("45.83.127.6"),
+            "peer id": ByteString("-qB5100-K7DKrkhNQTEm"),
+            "port": Integer(57369),
+        }),
+        Dictionary({
+            "ip": ByteString("155.2.216.27"),
+            "peer id": ByteString("-qB5120-OF6PBYP5pep8"),
+            "port": Integer(54402),
+        }),
+        Dictionary({
+            "ip": ByteString("73.177.150.140"),
+            "peer id": ByteString("-BW140M-T7v0b!5QsM4A"),
+            "port": Integer(6881),
+        }),
+        Dictionary({
+            "ip": ByteString("203.40.64.22"),
+            "peer id": ByteString("-qB5100-D9Kko_1NqUIs"),
+            "port": Integer(51271),
+        }),
+        Dictionary({
+            "ip": ByteString("94.52.201.15"),
+            "peer id": ByteString("-qB4431-tTnPb25-d~QV"),
+            "port": Integer(6363),
+        }),
+        Dictionary({
+            "ip": ByteString("49.66.178.129"),
+            "peer id": ByteString("-qB4540-N_79a0~A*DEL"),
+            "port": Integer(20435),
+        }),
+        Dictionary({
+            "ip": ByteString("81.5.49.170"),
+            "peer id": ByteString("-qB4450-4QXrKOuFa55Y"),
+            "port": Integer(6363),
+        }),
+        Dictionary({
+            "ip": ByteString("103.69.224.120"),
+            "peer id": ByteString("-qB5120-yY)W47.jnimg"),
+            "port": Integer(59961),
+        }),
+        Dictionary({
+            "ip": ByteString("176.188.31.15"),
+            "peer id": ByteString("-qB4400-E~C1Jx!lx!77"),
+            "port": Integer(53433),
+        }),
+    ]),
+})
