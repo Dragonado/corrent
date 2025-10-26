@@ -14,6 +14,45 @@ pub enum BencodeValue {
     Dictionary(BTreeMap<Vec<u8>, BencodeValue>),
 }
 
+pub fn get_dictionary(b: &BencodeValue) -> Result<BTreeMap<Vec<u8>, BencodeValue>, Box<dyn std::error::Error>> {
+    let BencodeValue::Dictionary(dict) = b else {
+        eprintln!("ERROR: Expected bencode value to be a dicitionary");
+        return Err(format!("bencode_value = {b:#?}").into());
+    };
+    return Ok(dict.clone());
+}
+
+pub fn get_list(b: &BencodeValue) -> Result<Vec<BencodeValue>, Box<dyn std::error::Error>> {
+    let BencodeValue::List(vec) = b else {
+        eprintln!("ERROR: Expected bencode value to be a list");
+        return Err(format!("bencode_value = {b:#?}").into());
+    };
+    return Ok(vec.clone());
+}
+
+
+pub fn get_integer(b: &BencodeValue) -> Result<i64, Box<dyn std::error::Error>> {
+    let BencodeValue::Integer(i) = b else {
+        eprintln!("ERROR: Expected bencode value to be an integer.");
+        return Err(format!("bencode_value = {b:#?}").into());
+    };
+    return Ok(i.clone());
+}
+
+pub fn get_bytestring(b: &BencodeValue) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
+    let BencodeValue::ByteString(s) = b else {
+        eprintln!("ERROR: Expected bencode value to be a bytestring.");
+        return Err(format!("bencode_value = {b:#?}").into());
+    };
+    return Ok(s.clone());
+}
+
+pub fn get_utf8_lossy(b: &BencodeValue) -> Result<String, Box<dyn std::error::Error>> {
+    let s = get_bytestring(b)?;
+    return Ok(String::from_utf8_lossy(&s).to_string());
+}
+// pub fn get_utf8_lossy(b: &BencodeValue) -> 
+
 impl Debug for BencodeValue {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {

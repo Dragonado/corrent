@@ -19,6 +19,7 @@ fn get_info(torrent: &BTreeMap<Vec<u8>, BencodeValue>) -> &BencodeValue {
     } 
 }
 
+// TODO: Add support for multi-tracker urls.
 fn get_announce_url(torrent: &BTreeMap<Vec<u8>, BencodeValue>) -> String {
     match torrent.get(&b"announce"[..]){
         Some(announce) => {
