@@ -53,7 +53,7 @@ fn get_hash(bytes: &Vec<u8>) -> Vec<u8> {
     hasher.finalize().to_vec()
 }
 
-fn get_info_hash(torrent: &BTreeMap<Vec<u8>, BencodeValue>) -> Vec<u8> {
+pub fn get_info_hash(torrent: &BTreeMap<Vec<u8>, BencodeValue>) -> Vec<u8> {
     let info = get_info(&torrent);
     get_hash(&bencode_element(&info))
 } 
